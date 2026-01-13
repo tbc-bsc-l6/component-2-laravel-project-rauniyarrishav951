@@ -1,12 +1,10 @@
 @extends('layouts.skydash')
 
-{{--Admin Dashboard View--}}
 @section('content')
 <div class="row">
     <div class="col-md-12 grid-margin">
         <div class="row">
             <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                {{--Headings--}}
                 <h3 class="font-weight-bold">Admin Dashboard</h3>
                 <h6 class="font-weight-normal mb-0">Welcome {{ auth()->user()->name }}! Monitor your platform's.</h6>
             </div>
@@ -28,8 +26,6 @@
         </div>
     </div>
 </div>
-
-{{-- Dashboard Content --}}
 
 <!-- Stats Cards -->
 <div class="row">
@@ -123,8 +119,6 @@
     </div>
 </div>
 
-
-{{-- Charts Section --}}
 <!-- Advanced Charts Section -->
 <div class="row">
     <!-- Enrollment Trends Chart -->
@@ -137,8 +131,6 @@
                         <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="enrollmentChartDropdown" data-bs-toggle="dropdown">
                             <i class="mdi mdi-calendar"></i> Last 12 months
                         </button>
-
-                        {{-- Dropdown Menu --}}
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#" onclick="updateEnrollmentChart('6months')">Last 6 months</a>
                             <a class="dropdown-item" href="#" onclick="updateEnrollmentChart('12months')">Last 12 months</a>
@@ -153,8 +145,6 @@
             </div>
         </div>
     </div>
-
-    {{--Course Section--}}
     
     <!-- Course Level Distribution -->
     <div class="col-md-4 grid-margin stretch-card">

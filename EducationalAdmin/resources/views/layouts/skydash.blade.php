@@ -1,13 +1,10 @@
-{{-- resources/views/layouts/skydash.blade.php --}}
-{{-- This is the main layout file for admin, teacher and student --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {{-- Meta Tags --}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ $title ?? 'Dashboard' }} -  Edu Admin</title>
-    {{ -- This line was modified to use Blade comment syntax -- }}
+    
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('skydash/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('skydash/vendors/ti-icons/css/themify-icons.css') }}">
@@ -20,7 +17,6 @@
     
     <link rel="shortcut icon" href="{{ asset('images/landing/logo.png') }}" />
     
-    {{-- Custom Styles --}}
     <style>
         @media (max-width: 991px) {
             .sidebar {
@@ -32,8 +28,6 @@
             }
         }
         
-        
-        /* Bottom Navigation Bar Styles */
         .bottom-nav {
             position: fixed;
             bottom: 20px;
@@ -391,9 +385,7 @@
             }
         }
 
-        {{-- Mr. User requested to add reduced motion preferences --}}
         /* Respect reduced motion preferences */
-        /* Disable animations and transitions for users who prefer reduced motion */
         @media (prefers-reduced-motion: reduce) {
             .bottom-nav, .bottom-nav-items, .bottom-nav-item, .bottom-nav .active-indicator {
                 transition: none !important;
@@ -523,7 +515,6 @@
     @stack('styles')
 </head>
 <body>
-    {{ -- This is the main container for the dashboard layout -- }}
     <div class="container-scroller">
         <!-- Navbar -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -725,7 +716,7 @@
             <!-- Footer -->
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://smartedu.com" target="_blank">Smart Edu LMS</a> 2024</span>
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://eduadmin.com" target="_blank">Smart Edu LMS</a> 2024</span>
                 </div>
             </footer>
         </div>
@@ -766,7 +757,6 @@
             });
         @endif
 
-        // This line indicates an error message
         @if(session('error'))
             Swal.fire({
                 position: "top-end",
@@ -813,7 +803,6 @@
             });
         }
 
-        // This function can be used for links as well
         // Global function for save confirmation
         function confirmSave(form) {
             Swal.fire({
@@ -832,8 +821,6 @@
         }
     </script>
     
-
-    {{-- The Script for Bottom Navigation Horizontal Slide Functionality --}}
     <script>
         // Bottom Navigation Horizontal Slide Functionality - Enhanced
         let bottomNav = null;

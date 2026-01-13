@@ -1,6 +1,4 @@
-{{-- resources/views/layouts/landing.blade.php --}}
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -26,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('css/landing/responsive.css') }}">
     
     @stack('styles')
-    {{-- Uses styles from Google Fonts --}}
+    
     <style>
         body {
             font-family: 'Roboto', sans-serif;

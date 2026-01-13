@@ -228,7 +228,7 @@
                 <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                     <div class="hero_slide_content text-center">
                         <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">
-                            Learn with <span>Smart Edu</span> LMS <!-- Brand name highlight -->
+                            Learn with <span> Edu Admin</span>  <!-- Brand name highlight -->
                         </h1>
                     </div>
                 </div>

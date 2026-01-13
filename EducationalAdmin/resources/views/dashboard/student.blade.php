@@ -1,9 +1,7 @@
-{{-- Inherits the Skydash layout --}}
 @extends('layouts.skydash')
 
 @section('content')
 <div class="row">
-    {{--This Section is for the Welcome Banner and Overall Progress--}}
     <!-- Welcome Banner -->
     <div class="col-md-12 grid-margin">
         <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">
@@ -13,7 +11,6 @@
                         <h2 class="text-white mb-2">Welcome back, {{ auth()->user()->name }}!</h2>
                         <p class="text-white mb-0" style="opacity: 0.9;">Continue your learning journey with  Edu Admin</p>
                     </div>
-                    {{--This is an icon representing education--}}
                     <div>
                         <i class="icon-graduation" style="font-size: 64px; opacity: 0.3;"></i>
                     </div>
@@ -22,16 +19,13 @@
         </div>
     </div>
 
-{{-- This Represents the Overall Progress Section --}}
     <!-- Overall Progress Card -->
     <div class="col-md-12 grid-margin">
         <div class="card">
-            {{-- This section shows overall progress with a progress bar --}}
             <div class="card-body">
                 <h4 class="card-title mb-4">
                     <i class="icon-chart text-primary"></i> Overall Progress
                 </h4>
-                {{-- Code Shows the overall progress percentage and a progress bar --}}
                 <div class="d-flex align-items-center">
                     <div style="flex: 0 0 150px;">
                         <h1 class="mb-0 text-primary" style="font-size: 3.5rem; font-weight: 700;">
@@ -43,7 +37,6 @@
                         <div style="background: #e5e7eb; height: 20px; border-radius: 9999px; overflow: hidden;">
                             <div style="background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: {{ $overallProgress ?? 0 }}%; transition: width 0.3s ease;"></div>
                         </div>
-                        {{--This shows the number of completed lessons and total lessons--}}
                         <div class="d-flex justify-content-between mt-2">
                             <small class="text-muted">{{ $completedLessonsCount ?? 0 }} Lessons Completed</small>
                             <small class="text-muted">{{ $totalLessons ?? 0 }} Total Lessons</small>
@@ -176,7 +169,6 @@
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    {{-- Title and Browse All Link --}}
                     <h4 class="card-title mb-0">
                         <i class="icon-book text-primary"></i> My Courses
                     </h4>
@@ -186,7 +178,6 @@
                 </div>
                 
                 <div class="row">
-                    {{-- This lines iterates through the enrolled courses and displays them --}}
                     @forelse($enrolledCourses ?? [] as $course)
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card course-card h-100" style="cursor: pointer; transition: all 0.3s;" 
@@ -194,7 +185,6 @@
                              onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" 
                              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
                             <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 150px; display: flex; align-items: center; justify-content: center;">
-                                {{-- Displays course thumbnail or first letter of title --}}
                                 @if($course->thumbnail)
                                     <img src="{{ asset('storage/' . $course->thumbnail) }}" alt="{{ $course->title }}" style="width: 100%; height: 100%; object-fit: cover;">
                                 @else
@@ -203,7 +193,6 @@
                                     </span>
                                 @endif
                             </div>
-                            {{-- The line explains the course title, description, progress bar, modules count, and continue button --}}
                             <div class="card-body">
                                 <h5 class="card-title mb-2" style="font-size: 1.125rem; font-weight: 600;">
                                     {{ Str::limit($course->title, 40) }}
@@ -212,7 +201,6 @@
                                     {{ Str::limit($course->description ?? 'No description available.', 80) }}
                                 </p>
                                 
-                                {{--This line shows the progress bar for each course--}}
                                 @php
                                     $courseProg = $courseProgress->firstWhere('course', $course->title);
                                 @endphp
@@ -398,14 +386,12 @@
 
 @push('styles')
 <style>
-    /* Interactive Card Styles */
     .interactive-card {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
         position: relative;
         overflow: hidden;
     }
-    /* Hover Effect */
 
     .interactive-card::before {
         content: '';
@@ -429,7 +415,6 @@
         opacity: 1;
     }
 
-    /* Icon Circle Styles */
     .card-icon-circle {
         width: 60px;
         height: 60px;
@@ -462,7 +447,6 @@
         animation-delay: 0.05s;
     }
 
-    /* Stagger Animation Delay for Multiple Cards */
     .interactive-card:nth-child(2) {
         animation-delay: 0.1s;
     }

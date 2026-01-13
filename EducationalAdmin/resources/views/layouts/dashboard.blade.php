@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{{-- This line represents the dashboard layout for the application --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
